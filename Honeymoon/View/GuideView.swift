@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GuideView: View {
     // MARK: - PROPERTIES
+    @Environment(\.presentationMode) var presentationMode
     
     // MARK: - BODY
     var body: some View {
@@ -38,7 +39,7 @@ struct GuideView: View {
                 }) // VStack
                 
                 Button(action: {
-                    
+                    self.presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Text("Continue".uppercased())
                         .font(.headline)
