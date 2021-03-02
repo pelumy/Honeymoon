@@ -17,6 +17,8 @@
 		046C820B25EE8AAC0099F91C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C820A25EE8AAC0099F91C /* CardView.swift */; };
 		046C820E25EE918A0099F91C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C820D25EE918A0099F91C /* HeaderView.swift */; };
 		046C821125EE94850099F91C /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C821025EE94850099F91C /* FooterView.swift */; };
+		046C821525EE986D0099F91C /* HeaderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C821425EE986D0099F91C /* HeaderComponent.swift */; };
+		046C821925EE9A040099F91C /* GuideComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C821825EE9A040099F91C /* GuideComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		046C820A25EE8AAC0099F91C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		046C820D25EE918A0099F91C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		046C821025EE94850099F91C /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		046C821425EE986D0099F91C /* HeaderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderComponent.swift; sourceTree = "<group>"; };
+		046C821825EE9A040099F91C /* GuideComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 		046C81EB25EE83020099F91C /* Honeymoon */ = {
 			isa = PBXGroup;
 			children = (
+				046C821325EE983F0099F91C /* Components */,
 				046C820625EE88FC0099F91C /* Data */,
 				046C81FF25EE87620099F91C /* App */,
 				046C820125EE876D0099F91C /* Model */,
@@ -117,6 +122,15 @@
 				046C820725EE890E0099F91C /* HoneymoonData.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		046C821325EE983F0099F91C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				046C821425EE986D0099F91C /* HeaderComponent.swift */,
+				046C821825EE9A040099F91C /* GuideComponent.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,9 +207,11 @@
 				046C821125EE94850099F91C /* FooterView.swift in Sources */,
 				046C820E25EE918A0099F91C /* HeaderView.swift in Sources */,
 				046C820425EE883F0099F91C /* HoneymoonModel.swift in Sources */,
+				046C821525EE986D0099F91C /* HeaderComponent.swift in Sources */,
 				046C81EF25EE83020099F91C /* ContentView.swift in Sources */,
 				046C81ED25EE83020099F91C /* HoneymoonApp.swift in Sources */,
 				046C820B25EE8AAC0099F91C /* CardView.swift in Sources */,
+				046C821925EE9A040099F91C /* GuideComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
