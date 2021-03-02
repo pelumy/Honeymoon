@@ -11,6 +11,7 @@
 		046C81EF25EE83020099F91C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C81EE25EE83020099F91C /* ContentView.swift */; };
 		046C81F125EE83030099F91C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046C81F025EE83030099F91C /* Assets.xcassets */; };
 		046C81F425EE83030099F91C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046C81F325EE83030099F91C /* Preview Assets.xcassets */; };
+		046C81FD25EE84AA0099F91C /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 046C81FC25EE84AA0099F91C /* Sounds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		046C81F025EE83030099F91C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		046C81F325EE83030099F91C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		046C81F525EE83030099F91C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		046C81FC25EE84AA0099F91C /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +54,10 @@
 		046C81EB25EE83020099F91C /* Honeymoon */ = {
 			isa = PBXGroup;
 			children = (
-				046C81EC25EE83020099F91C /* HoneymoonApp.swift */,
-				046C81EE25EE83020099F91C /* ContentView.swift */,
+				046C81FF25EE87620099F91C /* App */,
+				046C820125EE876D0099F91C /* Model */,
+				046C820225EE87760099F91C /* View */,
+				046C81FC25EE84AA0099F91C /* Sounds */,
 				046C81F025EE83030099F91C /* Assets.xcassets */,
 				046C81F525EE83030099F91C /* Info.plist */,
 				046C81F225EE83030099F91C /* Preview Content */,
@@ -67,6 +71,29 @@
 				046C81F325EE83030099F91C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		046C81FF25EE87620099F91C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				046C81EC25EE83020099F91C /* HoneymoonApp.swift */,
+				046C81EE25EE83020099F91C /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		046C820125EE876D0099F91C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		046C820225EE87760099F91C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +153,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046C81FD25EE84AA0099F91C /* Sounds in Resources */,
 				046C81F425EE83030099F91C /* Preview Assets.xcassets in Resources */,
 				046C81F125EE83030099F91C /* Assets.xcassets in Resources */,
 			);
