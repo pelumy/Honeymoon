@@ -12,16 +12,29 @@ struct ContentView: View {
     @State var showAlert: Bool = false
     @State var showGuide: Bool = false
     @State var showInfo = false
+    @State private var lastCardIndex = 1
+    @State var cardRemovalTransition = AnyTransition.trailingBottom
     @GestureState var dragState = DragState.inactive
     
+    private var dragAreaThreshld: CGFloat = 65.0
+    
     // MARK: - CARDVIEWS
-    var cardViews: [CardView] =  {
+    @State var cardViews: [CardView] =  {
         var views = [CardView]()
         for index in 0..<honeymoonData.count {
             views.append(CardView(honeymoon: honeymoonData[index]))
         }
         return views
     }()
+    
+    // MARK: - MOVE CARDS
+    private func moveCards() {
+        cardViews.removeFirst()
+        lastCardIndex += 1
+        let honeymoon = honeymoonData[lastCardIndex % honeymoonData.count]
+        let newCardView = CardView(honeymoon: honeymoon)
+        cardViews.append(newCardView)
+    }
     
     // MARK: - TOP CARD
     private func isTopCard(cardView: CardView) -> Bool {
@@ -81,6 +94,23 @@ struct ContentView: View {
                 ForEach(cardViews) { cardView in
                     cardView
                         .zIndex(isTopCard(cardView: cardView) ? 1 : 0)
+                        .overlay(
+                        // X-mark symbol
+                            ZStack {
+                                Image(systemName: "x.circle")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 128))
+                                    .shadow(color: Color(UIColor(red: 0, green: 0, blue: 0, alpha: 0.2)), radius: 12, x: 0, y: 0)
+                                    .opacity(dragState.translation.width < -dragAreaThreshld && isTopCard(cardView: cardView) ? 1 : 0)
+                                
+                                Image(systemName: "heart.circle")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 128))
+                                    .shadow(color: Color(UIColor(red: 0, green: 0, blue: 0, alpha: 0.2)), radius: 12, x: 0, y: 0)
+                                    .opacity(dragState.translation.width > dragAreaThreshld && isTopCard(cardView: cardView) ? 1 : 0)
+                            } // ZStack
+                            
+                        )
                         .offset(x: isTopCard(cardView: cardView) ? dragState.translation.width : 0, y: isTopCard(cardView: cardView) ? dragState.translation.height : 0)
                         .scaleEffect(dragState.isDragging && isTopCard(cardView: cardView) ? 0.85 : 1.0)
                         .rotationEffect(Angle(degrees: isTopCard(cardView: cardView) ? Double(dragState.translation.width / 12) : 0))
@@ -97,7 +127,30 @@ struct ContentView: View {
                                             break
                                         }
                                     })
+                                    .onChanged({ (value) in
+                                        guard case .second(true, let drag?) = value else {
+                                            return
+                                        }
+                                        
+                                        if drag.translation.width <  dragAreaThreshld {
+                                            cardRemovalTransition = .leadingBottom
+                                        }
+                                        
+                                        if drag.translation.width >  dragAreaThreshld {
+                                            cardRemovalTransition = .trailingBottom
+                                        }
+                                    })
+                                    .onEnded({ (value) in
+                                        guard case .second(true, let drag?) = value else {
+                                            return
+                                        }
+                                        
+                                        if drag.translation.width < -dragAreaThreshld || drag.translation.width > dragAreaThreshld {
+                                            moveCards()
+                                        }
+                                    })
                         )
+                        .transition(cardRemovalTransition)
                 } // Loop
             } // ZStack
             .padding(.horizontal)

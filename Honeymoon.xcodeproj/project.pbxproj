@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042EFEB625F0011A0072D4EA /* CardTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042EFEB525F0011A0072D4EA /* CardTransition.swift */; };
 		046C81ED25EE83020099F91C /* HoneymoonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C81EC25EE83020099F91C /* HoneymoonApp.swift */; };
 		046C81EF25EE83020099F91C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C81EE25EE83020099F91C /* ContentView.swift */; };
 		046C81F125EE83030099F91C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046C81F025EE83030099F91C /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		042EFEB525F0011A0072D4EA /* CardTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTransition.swift; sourceTree = "<group>"; };
 		046C81E925EE83020099F91C /* Honeymoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Honeymoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		046C81EC25EE83020099F91C /* HoneymoonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoneymoonApp.swift; sourceTree = "<group>"; };
 		046C81EE25EE83020099F91C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		042EFEB425F001000072D4EA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				042EFEB525F0011A0072D4EA /* CardTransition.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		046C81E025EE83020099F91C = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +86,7 @@
 		046C81EB25EE83020099F91C /* Honeymoon */ = {
 			isa = PBXGroup;
 			children = (
+				042EFEB425F001000072D4EA /* Extensions */,
 				046C822125EEAE900099F91C /* Modifiers */,
 				046C821325EE983F0099F91C /* Components */,
 				046C820625EE88FC0099F91C /* Data */,
@@ -235,6 +246,7 @@
 				046C81ED25EE83020099F91C /* HoneymoonApp.swift in Sources */,
 				046C820B25EE8AAC0099F91C /* CardView.swift in Sources */,
 				046C821925EE9A040099F91C /* GuideComponent.swift in Sources */,
+				042EFEB625F0011A0072D4EA /* CardTransition.swift in Sources */,
 				046C821C25EE9F290099F91C /* GuideView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
